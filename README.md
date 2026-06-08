@@ -1,6 +1,6 @@
 # Pages Project
 
-**Live:** https://ushikava.github.io/date-project/
+**Live:** https://ushikava.github.io/quiz-project/
 
 ## In-Use
 
