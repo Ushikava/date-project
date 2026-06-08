@@ -1,0 +1,131 @@
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 32px;
+  padding: 24px;
+  box-sizing: border-box;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 32px;
+  font-weight: 700;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #5a1a3a;
+  transition: opacity 0.2s;
+  line-height: 1;
+  padding: 4px 8px;
+}
+
+.back-btn:hover {
+  opacity: 1;
+}
+
+
+.gif-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+}
+
+.question,
+.text {
+  margin: 0;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #5a1a3a;
+  text-shadow: 0 2px 10px rgba(180, 60, 100, 0.25);
+  max-width: 100%;
+  word-break: break-word;
+
+  @media (max-width: 600px) {
+    font-size: 26px;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  font-size: 18px;
+  font-family: var(--sans);
+  height: 46px;
+  width: 120px;
+
+  padding: 12px 0;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+}
+
+.btn-yes,
+.btn-no {
+  background: #891bd3;
+  color: #ffffff;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.btn-yes:hover,
+.btn-no:hover {
+  background: #aa43ee;
+}
+
+
+.confetti-wrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.confetti-piece {
+  position: absolute;
+  will-change: transform, opacity;
+}
+
+.confetti-bottom {
+  animation: confetti-rise linear infinite;
+}
+
+.confetti-side {
+  animation: confetti-side linear infinite;
+}
+
+@keyframes confetti-rise {
+  0%   { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  75%  { opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) rotate(540deg); opacity: 0; }
+}
+
+@keyframes confetti-side {
+  0%   { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  15%  { opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) rotate(420deg); opacity: 0; }
+}
+
+.success-text {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--text-h);
+  text-align: center;
+  margin: 0;
+}
